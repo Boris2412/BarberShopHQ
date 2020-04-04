@@ -12,5 +12,6 @@ class Barber < ActiveRecord::Base
 end
 
 get '/' do
-  erb 'Can you handle a secret?'
+  @barbers = Barber.all
+  erb :index
 end
