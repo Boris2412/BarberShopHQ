@@ -4,39 +4,23 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="username" value="<%= @username %>" type="text" class="form-control" placeholder="Ваше имя">
+    <input name="client[name]" value="<%= @c.name %>" type="text" class="form-control" placeholder="Ваше имя">
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input name="phone" value="<%= @phone %>" type="text" class="form-control" placeholder="Ваш телефон">
+    <input name="client[phone]" value="<%= @c.phone %>" type="text" class="form-control" placeholder="Ваш телефон">
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать</label>
-    <input name="datetime" id="datetimepicker" value="<%= @datetime %>" type="text" class="form-control" placeholder="Введите дату и время">
-  </div>
-
-  <div class="form-group">
-     <label for="barber">Выбор парикмахера</label>
-     <br>
-  <select name="barber" class="form-control">
-    <!--<option value="none">Выберите парикмахера...</option>-->
-<!--    <option <%= @barber == 'Петрович' ? 'selected' : '' %> value="Петрович">Петрович</option>
-    <option <%= @barber == 'Макарыч' ? 'selected' : '' %> value="Макарыч">Макарыч</option>
-    <option <%= @barber == 'Федорыч' ? 'selected' : '' %> value="Федорыч">Федорыч</option>
--->  
-     <% @barbers.each do |item| %>
-        <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
-      <% end %>
-  
-  </select>
+    <input name="client[datestamp]" id="datetimepicker" value="<%= @c.datestamp %>" type="text" class="form-control" placeholder="Введите дату и время">
   </div>
 
 <div class="form-group">
  <label for="colorpicker">Какой цвет краски</label>
  <br>
-  <select name="colorpicker">
+  <select class= "colorpicker" name="client[color]">
     <option value="#7bd148">Green</option>
     <option value="#5484ed">Bold blue</option>
     <option value="#a4bdfc">Blue</option>

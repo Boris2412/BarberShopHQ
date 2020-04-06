@@ -1,1 +1,4 @@
-$('select[name="colorpicker"]').simplecolorpicker();
+$(function() {
+    $('.colorpicker').simplecolorpicker();
+    $('#datetimepicker').datetimepicker();
+});
